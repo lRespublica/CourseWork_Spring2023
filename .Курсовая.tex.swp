@@ -43,7 +43,7 @@
     
 	\end{center}
 	
-	\vspace{5cm}
+	\vspace{\fill}
 	
 	\begin{flushright}
 	{\bfseries	{\large Выполнил студент группы БПМ232} \\
@@ -54,7 +54,7 @@
 			  			Белова Мария Владимировна}
 	\end{flushright}
 	
-	\vspace{\fill}
+	\vspace{1cm}
     \begin{center}
     Москва 2023
     \end{center}
@@ -97,4 +97,25 @@
 
 \[f(x) = \frac{1}{\sqrt{e}}(1-\frac{5x^2}{24}+O(x^4))\]
 }
+
+\newpage
+
+\section{Задание 2}
+
+\subsection{Условие}
+Написать асимптотическую формулу для \(f(x) = \sqrt{x^2+1} - \sqrt[3]{\frac{x^4}{x-1}} \) при \(x \to +\infty\). В ответе должно быть не менее двух членов асимптотической формулы, не считая остатка. 
+
+\subsection{Решение}
+\doublespacing{
+\(f(x) = \sqrt{x^2+1} - \sqrt[3]{\frac{x^4}{x-1}}  = x\sqrt{1+\frac{1}{x^2}} - x\sqrt[3]{\frac{x}{x-1}} = x\sqrt{1+\frac{1}{x^2}} - x\sqrt[3]{(1 - \frac{1}{x})^{-1}} = x((1+\frac{1}{x^2})^{\frac{1}{2}} - (1 -\frac{1}{x})^{-\frac{1}{3}}) = x(\alpha(x) - \beta(x));\quad x \to 0\)
+
+\(\alpha(x) = (1+\frac{1}{x^2})^{\frac{1}{2}} = 1 + \frac{1}{2x^2} + O(\frac{1}{x^4}) \)
+
+\(\beta(x) = (1 -\frac{1}{x})^{-\frac{1}{3}} = 1 + \frac{1}{3x} + \frac{2}{9x^2} + O(\frac{1}{x^3})\)
+
+\(\alpha(x) - \beta(x) = -\frac{1}{3x} + \frac{5}{18x^2} + O(\frac{1}{x^3})\)
+
+\(f(x) = x(-\frac{1}{3x} + \frac{5}{18x^2} + O(\frac{1}{x^3})) = -\frac{1}{3} + \frac{5}{18x} + O(\frac{1}{x^2})\)
+}
+
 \end{document}
