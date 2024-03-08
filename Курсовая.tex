@@ -61,7 +61,7 @@
 
 \end{titlepage}
 
-{
+
 
 \section{Задание 1}
 
@@ -107,15 +107,39 @@
 
 \subsection{Решение}
 \doublespacing{
-\(f(x) = \sqrt{x^2+1} - \sqrt[3]{\frac{x^4}{x-1}}  = x\sqrt{1+\frac{1}{x^2}} - x\sqrt[3]{\frac{x}{x-1}} = x\sqrt{1+\frac{1}{x^2}} - x\sqrt[3]{(1 - \frac{1}{x})^{-1}} = x((1+\frac{1}{x^2})^{\frac{1}{2}} - (1 -\frac{1}{x})^{-\frac{1}{3}}) = x(\alpha(x) - \beta(x));\quad x \to 0\)
+\(f(x) = \sqrt{x^2+1} - \sqrt[3]{\frac{x^4}{x-1}}  = x\sqrt{1+\frac{1}{x^2}} - x\sqrt[3]{\frac{x}{x-1}} = x\sqrt{1+\frac{1}{x^2}} - x\sqrt[3]{(1 - \frac{1}{x})^{-1}} = x((1+\frac{1}{x^2})^{\frac{1}{2}} - (1 -\frac{1}{x})^{-\frac{1}{3}}) = x(\alpha(x) - \beta(x));\quad x \to +\infty\)
 
-\(\alpha(x) = (1+\frac{1}{x^2})^{\frac{1}{2}} = 1 + \frac{1}{2x^2} + O(\frac{1}{x^4}) \)
+\(\alpha(x) = (1+\frac{1}{x^2})^{\frac{1}{2}} = 1 + \frac{1}{2x^2} + O(\frac{1}{x^4});\quad \frac{1}{x} \to 0; \)
 
-\(\beta(x) = (1 -\frac{1}{x})^{-\frac{1}{3}} = 1 + \frac{1}{3x} + \frac{2}{9x^2} + O(\frac{1}{x^3})\)
+\(\beta(x) = (1 -\frac{1}{x})^{-\frac{1}{3}} = 1 + \frac{1}{3x} + \frac{2}{9x^2} + O(\frac{1}{x^3});\quad \frac{1}{x} \to 0;\)
 
 \(\alpha(x) - \beta(x) = -\frac{1}{3x} + \frac{5}{18x^2} + O(\frac{1}{x^3})\)
 
 \(f(x) = x(-\frac{1}{3x} + \frac{5}{18x^2} + O(\frac{1}{x^3})) = -\frac{1}{3} + \frac{5}{18x} + O(\frac{1}{x^2})\)
-
 }
+
+
+\newpage
+
+\section{Задание 3}
+
+\subsection{Условие}
+Используя формулу Тейлора, найти асимптотику корней уравнения \[sin\: x \ - \frac{1}{x^2} = 0, x> 0\] В ответе должно быть не менее двух членов асимптотики.
+\subsection{Решение}
+\doublespacing {
+Рассмотрим уравнение \(sin\: x = \frac{1}{x^2}\).
+
+При \(x \to +\infty\quad \frac{1}{x^2} \to 0\)
+
+Соответственно, последовательность корней уравнений представима в виде \(x_n = \pi n + \alpha_n;\quad \alpha_n \to 0;\ n \to +\infty \)
+
+Подставим \(x_n\) в обе части уравнения:
+\begin{enumerate}
+\item \(sin(\pi n +\alpha_n) = sin(\alpha_n)cos(\pi n) \; + \; cos(\alpha_n)sin(\pi n) = sin(\alpha_n)cos(\pi n) \sim \alpha_n cos(\pi n) = (-1)^n \alpha_n; \quad \alpha_n \to 0;\ n \to +\infty\)
+
+\item \frac{1}{(\(\pi n + \alpha_n\)}
+\end{enumerate}
+}
+
+
 \end{document}
