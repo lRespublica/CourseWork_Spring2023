@@ -190,4 +190,36 @@ dv = sin\:r\ dr & v = -cos\:r
 \(F(x) = -\frac{2sin\sqrt{x+1}}{x} + \frac{4cos\sqrt{x+1}}{x^2} + o(-\frac{2sin\sqrt{x+1}}{x} + \frac{4cos\sqrt{x+1}}{x^2}),\quad x \to +\infty\)
 }
 
+\newpage
+
+\section{Задание 5}
+\subsection{Условие}
+Написать асимптотическое представление функции \(F(x) = \int_1^x \sqrt{t^2+1}e^{1/t}dt\) доведённое до члена, являющимся бесконечно малой функцией, при \(x \to +\infty\).
+
+\subsection{Решение}
+\doublespacing {
+Рассмотрим отдельно
+\begin{enumerate}
+\item \(\sqrt{t^2 + 1} = t(1+\frac{1}{t^2})^{1/2} = t(1+\frac{1}{2t^2} + O(\frac{1}{t^4})) = t + \frac{1}{2t} + O(\frac{1}{t^3});\quad t \to +\infty\)
+
+\item \(e^{1/t} = 1 + \frac{1}{t} + \frac{1}{2t^2} + O(\frac{1}{t^3});\quad t \to +\infty\)
+
+
+\item \(\sqrt{t^2 + 1} *e^{1/t} = t + 1 + \frac{1}{2t} + O(\frac{1}{t^2}) + \frac{1}{2t} + \frac{1}{2t^2} + \frac{1}{4t^3} + O(\frac{1}{t^4}) + O(\frac{1}{t^3}) + O(\frac{1}{t^4}) + O(\frac{1}{t^5}) + O(\frac{1}{t^6}) = t + 1 + \frac{1}{t} + O(\frac{1}{t^2})\)
+\end{enumerate}
+
+Вернёмся к изначальному интегралу:
+
+\(F(x) = \int_1^x \sqrt{t^2+1}e^{1/t}dt = \int_1^x (\sqrt{t^2+1}e^{1/t} - t - 1 - \frac{1}{t})dt\ +\ \int_1^x (t + 1 + \frac{1}{t})dt = F_1(x) + \left.(\frac{t^2}{2} + t +ln\: t)\right|_1^x = F_1(x) + \frac{x^2}{2} + x + ln\: x - \frac{3}{2}\)
+
+Осталось исследовать асимптотику функции \[F_1(x) = \int_1^x (\sqrt{t^2+1}e^{1/t} - t - 1 - \frac{1}{t})dt\]
+
+Так как в последнем выражении подынтегральная функция имеет асимптотику \(O(\frac{1}{t^2}),\  t \to + \infty\), то несобственный интеграл \(F_1(x)\) сходится. Обозначим его значение за A. Тогда
+
+\(F_1(x) = A - \int_x^{+\infty} (\sqrt{t^2+1}e^{1/t} - t - 1 - \frac{1}{t})dt = A - \int_x^{+\infty}O(\frac{1}{t^2})dt  = A + O(\frac{1}{x})\) 
+}
+
+Итак,
+\[F(x) = \frac{x^2}{2} + x + ln\: x + (A-\frac{3}{2}) + O(\frac{1}{x}), \quad x \to + \infty\]
+
 \end{document}
