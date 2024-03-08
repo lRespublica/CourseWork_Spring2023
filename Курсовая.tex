@@ -122,7 +122,6 @@
 \newpage
 
 \section{Задание 3}
-
 \subsection{Условие}
 Используя формулу Тейлора, найти асимптотику корней уравнения \[sin\: x \ - \frac{1}{x^2} = 0, x> 0\] В ответе должно быть не менее двух членов асимптотики.
 \subsection{Решение}
@@ -137,9 +136,58 @@
 \begin{enumerate}
 \item \(sin(\pi n +\alpha_n) = sin(\alpha_n)cos(\pi n) \; + \; cos(\alpha_n)sin(\pi n) = sin(\alpha_n)cos(\pi n) \sim \alpha_n cos(\pi n) = (-1)^n \alpha_n; \quad \alpha_n \to 0;\ n \to +\infty\)
 
-\item \frac{1}{(\(\pi n + \alpha_n\)}
+\item \(\frac{1}{(\pi n + \alpha_n)^2} \sim \frac{1}{\pi^2 n^2}; \quad \alpha_n \to 0;\ n \to +\infty\)
 \end{enumerate}
+
+\((-1)^n \alpha_n = \frac{1}{\pi^2 n^2} + o(\frac{1}{n^2})\)
+
+\(\alpha_n = (-1)^n \frac{1}{\pi^2 n^2} + o(\frac{1}{n^2})\)
+
+Следовательно, \[x_n = \pi n + (-1)^n \frac{1}{\pi^2 n^2} + o(\frac{1}{n^2})\]
 }
 
+\section{Задание 4}
+\subsection{Условие}
+Написать асимптотическое представление функции \[F(x) = \int_x^{+\infty} \frac{cos(\sqrt{t+1})}{t\sqrt{t+1}} dt,\quad x \to +\infty\] содержащее два члена асимптотической последовательности.
+
+\subsection{Решение}
+\doublespacing {
+Воспользуемся формулой интегрирования по частям:
+
+\(\int_x^{+\infty} \frac{cos(\sqrt{t+1})}{t\sqrt{t+1}} dt = 
+\small{
+\begin{bmatrix} 
+u = \frac{1}{t}; & du = -\frac{1}{t^2}dt\\
+dv = \frac{cos(\sqrt{t+1})}{\sqrt{t+1}} dt & v = 2sin\sqrt{t+1}
+\end{bmatrix}} 
+= \left. \frac{2sin\sqrt{t+1}}{t}\right|_x^{+\infty} + 2\int_x^{+\infty} 
+\frac{sin(\sqrt{t+1})}{t^2} dt = -\frac{2sin\sqrt{x+1}}{x} + 2\int_x^{+\infty} 
+\frac{sin(\sqrt{t+1})}{t^2} dt\) 
+
+\hspace{1cm}
+
+Рассмотрим отдельно
+
+\(\int_x^{+\infty} \frac{sin(\sqrt{t+1})}{t^2} dt = \small{
+\begin{bmatrix}
+\sqrt{t+1} = r; & r^2 = t +1 \\
+t = r^2 - 1 & dt = 2rdr \\
+\end{bmatrix}
+\begin{bmatrix}
+t & r\\
+x & \sqrt{x+1}\\
++\infty & +\infty
+\end{bmatrix}} = 2\int_{_{\sqrt{x+1}}}^{_{+\infty}}\frac{r\; sin\:r}{(r^2-1)^2}dr = 
+\small{
+\begin{bmatrix} 
+u = \frac{r}{r^2-1}; & du = \frac{(r^2-1)^2 - 4r^2(r^2-1)}{(r^2-1)^4}dr\\
+dv = sin\:r\ dr & v = -cos\:r
+\end{bmatrix}} 
+= \left. \frac{-2\ cos\:r\ }{(r^2-1)^2} \right|_{\sqrt{x+1}}^{+\infty} + o(\int_{_{\sqrt{x+1}}}^{_{+\infty}} \frac{cos\;r}{(r^2-1)^2}dr) = \frac{2cos\sqrt{x+1}}{x^2} + o(\int_x^{+\infty} \frac{cos\sqrt{t+1}}{t^2}dt)\) 
+
+\hspace{1cm}
+
+\(F(x) = -\frac{2sin\sqrt{x+1}}{x} + \frac{4cos\sqrt{x+1}}{x^2} + o(-\frac{2sin\sqrt{x+1}}{x} + \frac{4cos\sqrt{x+1}}{x^2}),\quad x \to +\infty\)
+}
 
 \end{document}
