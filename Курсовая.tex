@@ -180,14 +180,14 @@ x & \sqrt{x+1}\\
 \end{bmatrix}} = 2\int_{_{\sqrt{x+1}}}^{_{+\infty}}\frac{r\; sin\:r}{(r^2-1)^2}dr = 
 \small{
 \begin{bmatrix} 
-u = \frac{r}{r^2-1}; & du = \frac{(r^2-1)^2 - 4r^2(r^2-1)}{(r^2-1)^4}dr\\
+u = \frac{r}{(r^2-1)^2}; & du = \frac{(r^2-1)^2 - 4r^2(r^2-1)}{(r^2-1)^4}dr\\
 dv = sin\:r\ dr & v = -cos\:r
 \end{bmatrix}} 
-= \left. \frac{-2\ cos\:r\ }{(r^2-1)^2} \right|_{\sqrt{x+1}}^{+\infty} + o(\int_{_{\sqrt{x+1}}}^{_{+\infty}} \frac{cos\;r}{(r^2-1)^2}dr) = \frac{2cos\sqrt{x+1}}{x^2} + o(\int_x^{+\infty} \frac{cos\sqrt{t+1}}{t^2}dt)\) 
+= \left. \frac{-2\ r \cos\:r\ }{(r^2-1)^2} \right|_{\sqrt{x+1}}^{+\infty} + \int_{_{\sqrt{x+1}}}^{_{+\infty}} \frac{(r^2-1)^2 - 4r^2(r^2-1)}{(r^2-1)^4}\cos r dr = \frac{2\sqrt{x+1}\cos\sqrt{x+1}}{x^2} + o(F(x))\) 
 
 \hspace{1cm}
 
-\(F(x) = -\frac{2sin\sqrt{x+1}}{x} + \frac{4cos\sqrt{x+1}}{x^2} + o(-\frac{2sin\sqrt{x+1}}{x} + \frac{4cos\sqrt{x+1}}{x^2}),\quad x \to +\infty\)
+\(F(x) = -\frac{2sin\sqrt{x+1}}{x} + \frac{4\sqrt{x+1} \cos\sqrt{x+1}}{x^2} + o(\frac{1}{x^{3/2}}),\quad x \to +\infty\)
 }
 
 \newpage
