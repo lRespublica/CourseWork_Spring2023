@@ -95,7 +95,7 @@
 
 \(e^{\gamma(x)} = 1 + \gamma(x) + O(\gamma^2(x)) = 1 - \frac{5x^2}{24} + O(x^4)\)
 
-\[f(x) = \frac{1}{\sqrt{e}}(1-\frac{5x^2}{24}+O(x^4))\]
+\[f(x) = \frac{1}{\sqrt{e}}(1-\frac{5x^2}{24}+O(x^4)),\quad x \to 0\]
 }
 
 \newpage
@@ -115,7 +115,7 @@
 
 \(\alpha(x) - \beta(x) = -\frac{1}{3x} + \frac{5}{18x^2} + O(\frac{1}{x^3})\)
 
-\(f(x) = x(-\frac{1}{3x} + \frac{5}{18x^2} + O(\frac{1}{x^3})) = -\frac{1}{3} + \frac{5}{18x} + O(\frac{1}{x^2})\)
+\(f(x) = x(-\frac{1}{3x} + \frac{5}{18x^2} + O(\frac{1}{x^3})) = -\frac{1}{3} + \frac{5}{18x} + O(\frac{1}{x^2}),\quad x \to +\infty\)
 }
 
 
@@ -143,7 +143,7 @@
 
 \(\alpha_n = (-1)^n \frac{1}{\pi^2 n^2} + o(\frac{1}{n^2})\)
 
-Следовательно, \[x_n = \pi n + (-1)^n \frac{1}{\pi^2 n^2} + o(\frac{1}{n^2})\]
+Следовательно, \[x_n = \pi n + (-1)^n \frac{1}{\pi^2 n^2} + o(\frac{1}{n^2}),\quad n \to +\infty\]
 }
 
 \section{Задание 4}
@@ -187,7 +187,7 @@ dv = sin\:r\ dr & v = -cos\:r
 
 \hspace{1cm}
 
-\(F(x) = -\frac{2sin\sqrt{x+1}}{x} + \frac{4\sqrt{x+1} \cos\sqrt{x+1}}{x^2} + o(\frac{1}{x^{3/2}}),\quad x \to +\infty\)
+\[F(x) = -\frac{2sin\sqrt{x+1}}{x} + \frac{4\sqrt{x+1} \cos\sqrt{x+1}}{x^2} + o(\frac{1}{x^{3/2}}),\quad x \to +\infty\]
 }
 
 \newpage
@@ -214,7 +214,7 @@ dv = sin\:r\ dr & v = -cos\:r
 
 Осталось исследовать асимптотику функции \[F_1(x) = \int_1^x (\sqrt{t^2+1}e^{1/t} - t - 1 - \frac{1}{t})dt\]
 
-Так как в последнем выражении подынтегральная функция имеет асимптотику \(O(\frac{1}{t^2}),\  t \to + \infty\), то несобственный интеграл \(F_1(x)\) сходится. Обозначим его значение за A. Тогда
+Так как в последнем выражении подынтегральная функция имеет асимптотику \(O(\frac{1}{t^2}),\  t \to + \infty\), то несобственный интеграл \(\int_1^{+\infty} (\sqrt{t^2+1}e^{1/t} - t - 1 - \frac{1}{t})dt\) сходится. Обозначим его значение за A. Тогда
 
 \(F_1(x) = A - \int_x^{+\infty} (\sqrt{t^2+1}e^{1/t} - t - 1 - \frac{1}{t})dt = A - \int_x^{+\infty}O(\frac{1}{t^2})dt  = A + O(\frac{1}{x})\) 
 }
